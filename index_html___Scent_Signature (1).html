@@ -3,133 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Scent Signature: duurzame en inclusieve parfumerie in Amsterdamse Poort.">
-  <title>Scent Signature | Amsterdamse Poort</title>
-
-  <!-- De styling staat bewust in dit bestand, zodat de pagina direct werkt met Live Server. -->
+  <meta name="description" content="Scent Signature Atelier — een persoonlijke geur, gemaakt in Amsterdam-Zuidoost.">
+  <title>Scent Signature Atelier</title>
   <style>
-    :root { --bg:#fbf8f2; --paper:#fffdf9; --ink:#24231d; --muted:#60594f; --gold:#987533; --line:#e5dbcd; --green:#55876b; --blue:#4a7aa4; --orange:#b27b46; --red:#a95752; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; background:var(--bg); color:var(--ink); font-family:Arial, Helvetica, sans-serif; line-height:1.55; }
-    .container { width:min(1160px, 88vw); margin:0 auto; }
-    .navbar { position:sticky; top:0; z-index:10; display:flex; align-items:center; gap:20px; padding:15px 6vw; background:rgba(251,248,242,.95); border-bottom:1px solid var(--line); backdrop-filter:blur(10px); }
-    .brand { margin-right:auto; color:var(--ink); font-family:Georgia,serif; font-size:18px; font-weight:700; letter-spacing:.08em; text-decoration:none; }
-    .brand span { color:var(--gold); }
-    .navbar nav { display:flex; gap:18px; }
-    .navbar nav a { color:#514b40; font-size:13px; text-decoration:none; }
-    .navbar nav a:hover { color:var(--gold); }
-    .hero { min-height:560px; display:grid; grid-template-columns:1.2fr .8fr; gap:40px; align-items:center; padding:75px 0; }
-    .eyebrow,.tag { margin:0 0 10px; color:var(--gold); font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
-    h1,h2,h3 { font-family:Georgia, 'Times New Roman', serif; }
-    h1 { max-width:750px; margin:16px 0; font-size:clamp(48px,7vw,88px); line-height:.94; letter-spacing:-.055em; }
-    h1 em { color:var(--gold); }
-    h2 { margin:5px 0 15px; font-size:clamp(36px,4vw,46px); line-height:1; }
-    h3 { margin:0 0 10px; font-size:21px; line-height:1.1; }
-    .lead { max-width:650px; color:#5a554b; font-size:18px; }
-    .intro { max-width:800px; color:var(--muted); font-size:16px; }
-    .button { display:inline-block; margin:18px 8px 0 0; padding:12px 17px; border:1px solid var(--ink); border-radius:3px; background:var(--ink); color:#fff; font-size:14px; font-weight:700; text-decoration:none; }
-    .button:hover { background:var(--gold); border-color:var(--gold); }
-    .button-outline { background:transparent; color:var(--ink); }
-    .button-outline:hover { color:#fff; }
-    .bottle { position:relative; width:min(280px,78%); height:390px; margin:40px auto 0; border-radius:48% 48% 10% 10%; background:linear-gradient(145deg,#e5c97f,#a76f2b 48%,#392411); box-shadow:20px 28px 45px #9f90784f; }
-    .bottle::before { content:""; position:absolute; top:-60px; left:29%; width:42%; height:76px; border-radius:10px 10px 0 0; background:#191812; }
-    .bottle-label { position:absolute; inset:34% 17%; padding-top:29px; border-top:1px solid #ffffffaa; border-bottom:1px solid #ffffffaa; color:#fff; font-family:Georgia,serif; font-size:20px; letter-spacing:.12em; line-height:1.7; text-align:center; }
-    .section { padding:78px 0; border-top:1px solid var(--line); }
-    .two-columns { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
-    .three-columns { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:28px; }
-    .four-columns { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
-    .card { padding:21px; border:1px solid var(--line); border-radius:8px; background:var(--paper); box-shadow:0 7px 20px #4e3e1a08; }
-    .card p,.card li { color:var(--muted); font-size:14px; }
-    .card ul { margin:0; padding-left:18px; }
-    .feature-card { padding:30px; border-radius:8px; background:#27251f; color:#f8f2e8; }
-    .feature-card h3 { color:#fff; }
-    .feature-card p,.feature-card li { color:#dfd4c4; }
-    .feature-card .tag { color:#e5c97f; }
-    .table-scroll { overflow-x:auto; margin-top:25px; }
-    table { width:100%; min-width:850px; border-collapse:collapse; background:var(--paper); }
-    th { padding:13px; background:#29271f; color:#fff; font-size:12px; text-align:left; }
-    td { padding:14px; border-bottom:1px solid #eadfce; color:#554f45; font-size:13px; vertical-align:top; }
-    .bmc-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-top:25px; }
-    .bmc-grid .card { min-height:185px; padding:16px; }
-    .bmc-grid h3 { font-size:17px; }
-    .highlight { border:2px solid var(--gold); background:#fffaf0; }
-    .swot-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:24px; }
-    .strength { border-top:5px solid var(--green); }
-    .weakness { border-top:5px solid var(--orange); }
-    .opportunity { border-top:5px solid var(--blue); }
-    .threat { border-top:5px solid var(--red); }
-    .strategy { margin-top:16px; }
-    blockquote { max-width:880px; margin:28px 0; font-family:Georgia,serif; font-size:clamp(28px,4vw,47px); line-height:1.1; }
-    footer { padding:38px 0; background:#27251f; color:#d8cfbf; font-size:13px; }
-    footer p { max-width:850px; margin-bottom:0; }
-    @media (max-width:900px) { .hero,.two-columns { grid-template-columns:1fr; } .hero { padding:55px 0; } .bottle { margin-top:80px; } .three-columns { grid-template-columns:1fr; } .four-columns { grid-template-columns:1fr 1fr; } .bmc-grid { grid-template-columns:repeat(3,1fr); } }
-    @media (max-width:620px) { .navbar { padding:13px 4vw; overflow-x:auto; } .navbar nav { gap:13px; } .navbar nav a { white-space:nowrap; } .brand { font-size:15px; } .container { width:min(92vw,1160px); } .section { padding:55px 0; } .swot-grid,.four-columns,.bmc-grid { grid-template-columns:1fr; } .bottle { height:330px; } }
+    :root { --porcelain:#f4f1ea; --paper:#fcfaf5; --ink:#172a38; --blue:#173a57; --mist:#dce2df; --ochre:#ae7d42; --line:#cfd6d1; --warm:#786e61; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; background:var(--porcelain); color:var(--ink); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+    .container { width:min(1180px,89vw); margin:0 auto; }
+    .topline { height:5px; background:var(--ochre); }
+    .nav { display:flex; align-items:center; min-height:82px; border-bottom:1px solid var(--line); }
+    .wordmark { color:var(--blue); font-family:Georgia,serif; font-size:20px; letter-spacing:.2em; text-decoration:none; }
+    .wordmark small { display:block; margin-top:1px; font-family:Arial,sans-serif; font-size:8px; font-weight:700; letter-spacing:.34em; }
+    .nav nav { display:flex; gap:24px; margin-left:auto; }
+    .nav nav a { color:var(--ink); font-size:10px; font-weight:700; letter-spacing:.13em; text-decoration:none; text-transform:uppercase; }
+    .nav nav a:hover { color:var(--ochre); }
+    .hero { display:grid; grid-template-columns:1.1fr .9fr; min-height:655px; border-bottom:1px solid var(--line); }
+    .hero-copy { display:flex; flex-direction:column; justify-content:center; padding:80px 7vw 80px 0; }
+    .kicker { margin:0 0 18px; color:var(--ochre); font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; }
+    h1,h2,h3,blockquote { font-family:Georgia,"Times New Roman",serif; font-weight:400; }
+    h1 { max-width:690px; margin:0; color:var(--blue); font-size:clamp(60px,7vw,100px); line-height:.9; letter-spacing:-.065em; }
+    h1 em { color:var(--ochre); font-style:italic; }
+    .lead { max-width:505px; margin:30px 0 0; color:#4f5b5d; font-size:17px; }
+    .links { display:flex; align-items:center; gap:24px; margin-top:35px; }
+    .cta { display:inline-block; padding:13px 19px; background:var(--blue); border:1px solid var(--blue); color:#fff; font-size:10px; font-weight:700; letter-spacing:.14em; text-decoration:none; text-transform:uppercase; }
+    .cta:hover { background:var(--ochre); border-color:var(--ochre); }
+    .plain-link { color:var(--blue); border-bottom:1px solid var(--ochre); font-size:10px; font-weight:700; letter-spacing:.12em; text-decoration:none; text-transform:uppercase; }
+    .hero-art { position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; background:var(--blue); }
+    .hero-art::before { content:"AMSTERDAM\A ZUIDOOST"; white-space:pre; position:absolute; top:36px; right:34px; color:#a6b4b9; font-size:9px; font-weight:700; letter-spacing:.22em; line-height:1.8; text-align:right; }
+    .hero-art::after { content:"01"; position:absolute; left:34px; bottom:24px; color:rgba(244,241,234,.4); font-family:Georgia,serif; font-size:62px; }
+    .flacon { position:relative; width:255px; height:345px; margin-top:50px; border:1px solid rgba(252,250,245,.75); border-radius:40% 40% 4% 4%; background:linear-gradient(105deg,rgba(255,255,255,.38),transparent 20%),linear-gradient(150deg,#d7b96f 0%,#aa793d 44%,#6a431d 76%,#302215 100%); box-shadow:28px 30px 55px rgba(0,0,0,.35),inset 0 0 35px rgba(255,255,255,.16); }
+    .flacon::before { content:""; position:absolute; left:30%; top:-68px; width:40%; height:74px; border:1px solid rgba(252,250,245,.5); background:linear-gradient(90deg,#253f51,#0a1e2c,#253f51); }
+    .flacon::after { content:"SIGNATURE\A ATELIER"; white-space:pre; position:absolute; left:15%; right:15%; top:38%; padding:24px 0; border-top:1px solid rgba(255,255,255,.74); border-bottom:1px solid rgba(255,255,255,.74); color:#fffaf1; font-family:Georgia,serif; font-size:17px; letter-spacing:.18em; line-height:1.75; text-align:center; }
+    .section { padding:93px 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--paper); }
+    .section-label { display:flex; gap:14px; align-items:center; margin-bottom:13px; color:var(--ochre); font-size:10px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+    .section-label::before { content:""; width:37px; height:1px; background:var(--ochre); }
+    h2 { max-width:720px; margin:0; color:var(--blue); font-size:clamp(42px,5vw,66px); line-height:.98; letter-spacing:-.045em; }
+    .intro { max-width:710px; margin:22px 0 0; color:#566263; }
+    .three { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:48px; border-top:1px solid var(--line); border-left:1px solid var(--line); }
+    .feature { min-height:230px; padding:28px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--paper); }
+    .feature .number { display:block; margin-bottom:35px; color:var(--ochre); font-family:Georgia,serif; font-size:28px; }
+    h3 { margin:0 0 10px; color:var(--blue); font-size:24px; } .feature p,.card p,.card li { color:#5a625f; font-size:14px; }
+    .split { display:grid; grid-template-columns:1.05fr .95fr; gap:80px; align-items:start; }
+    .note { padding:34px; background:var(--blue); color:#eff0ea; }
+    .note .section-label { color:#e2bd76; } .note .section-label::before { background:#e2bd76; } .note h3 { color:#fffaf1; font-size:31px; } .note p,.note li { color:#d7e0dc; } .note li { margin:8px 0; }
+    .table-wrap { margin-top:42px; overflow-x:auto; border-top:2px solid var(--blue); }
+    table { width:100%; min-width:840px; border-collapse:collapse; background:var(--paper); } th { padding:15px 14px; color:var(--blue); border-bottom:1px solid var(--line); font-size:10px; letter-spacing:.11em; text-align:left; text-transform:uppercase; } td { padding:18px 14px; border-bottom:1px solid var(--line); color:#566263; font-size:13px; vertical-align:top; } td:first-child { color:var(--blue); font-weight:700; }
+    .bmc { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:43px; }
+    .card { min-height:195px; padding:24px; border:1px solid var(--line); background:var(--paper); } .card h3 { font-size:21px; } .card ul { margin:0; padding-left:17px; } .card li { margin:5px 0; }
+    .card-focus { border-top:4px solid var(--ochre); background:#f5efe0; }
+    .swot { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:42px; } .swot .card { min-height:205px; } .strength { border-top:4px solid #6c977d; } .weakness { border-top:4px solid #ba8b55; } .opportunity { border-top:4px solid #64869c; } .threat { border-top:4px solid #bd7770; }
+    .strategy { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px; }.strategy .card { min-height:150px; }
+    blockquote { max-width:800px; margin:35px 0 47px; color:var(--blue); font-size:clamp(34px,4vw,56px); line-height:1.03; letter-spacing:-.045em; }
+    .pitch { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }.pitch article { min-height:205px; padding:24px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }.pitch time { display:block; margin-bottom:32px; color:var(--ochre); font-size:10px; font-weight:700; letter-spacing:.13em; }.pitch p { color:#596260; font-size:14px; }
+    footer { padding:55px 0; background:var(--blue); color:#d3dad5; } footer strong { color:#f5ecd8; font-family:Georgia,serif; font-size:22px; font-weight:400; } footer p { max-width:800px; font-size:13px; }
+    @media(max-width:850px){ .hero,.split { grid-template-columns:1fr; }.hero-copy{padding:75px 0 55px}.hero-art{min-height:430px}.three{grid-template-columns:1fr}.bmc{grid-template-columns:1fr 1fr}.pitch{grid-template-columns:1fr 1fr}.nav nav{gap:12px}.nav nav a{font-size:9px} }
+    @media(max-width:560px){ .nav nav{display:none}.hero{min-height:auto}.hero-art{min-height:360px}.flacon{transform:scale(.82)}.section{padding:65px 0}.bmc,.swot,.strategy,.pitch{grid-template-columns:1fr}.links{align-items:flex-start;flex-direction:column;gap:15px} }
   </style>
 </head>
 <body>
-  <header class="navbar">
-    <a class="brand" href="#overzicht">SCENT <span>SIGNATURE</span></a>
-    <nav aria-label="Hoofdnavigatie"><a href="#concept">Concept</a><a href="#destep">DESTEP</a><a href="#bmc">BMC</a><a href="#swot">SWOT</a><a href="#pitch">Pitch</a></nav>
-  </header>
-
+  <div class="topline"></div>
+  <header class="container nav"><a class="wordmark" href="#home">SCENT SIGNATURE<small>Atelier · Amsterdam Zuidoost</small></a><nav><a href="#concept">Het atelier</a><a href="#destep">DESTEP</a><a href="#bmc">Model</a><a href="#swot">Strategie</a><a href="#pitch">Pitch</a></nav></header>
   <main>
-    <section class="hero container" id="overzicht">
-      <div>
-        <p class="eyebrow">Amsterdamse Poort · ondernemingsplan 2026</p>
-        <h1>Een geur die <em>alleen</em> van jou is.</h1>
-        <p class="lead">Scent Signature is een inclusieve, duurzame parfumerie waar klanten onder begeleiding een persoonlijke eau de parfum samenstellen. De winkel combineert geurbeleving, vakmanschap en navulbare flacons voor de veelzijdige community van Amsterdam-Zuidoost.</p>
-        <a class="button" href="#concept">Ontdek het concept</a><a class="button button-outline" href="#pitch">Pitch in 3 minuten</a>
-      </div>
-      <div class="bottle" aria-label="Illustratie van een parfumfles"><div class="bottle-label">SCENT<br>SIGNATURE</div></div>
-    </section>
-
-    <section class="section" id="concept"><div class="container">
-      <p class="eyebrow">01 · Bedrijfsidee &amp; waardepropositie</p><h2>Co-creatie, geen standaardgeur.</h2>
-      <div class="two-columns"><div>
-        <p class="intro"><strong>Missie.</strong> Geur toegankelijk maken als persoonlijke vorm van expressie, met respect voor verschillende culturen, huidtypen en budgetten. <strong>Visie.</strong> De meest vertrouwde lokale geurstudio van Zuidoost worden: creatief, transparant en zo circulair mogelijk.</p>
-        <div class="three-columns">
-          <article class="card"><p class="tag">Persoonlijk</p><h3>Geurbar</h3><p>Een korte intake, testen op blotters en begeleiding bij top-, hart- en basisnoten. Daarna mengt de geuradviseur een persoonlijke formule binnen veilige productstandaarden.</p></article>
-          <article class="card"><p class="tag">Cultureel sensitief</p><h3>Voor iedereen</h3><p>Een geurbibliotheek met uiteenlopende geurtradities, meertalig en zonder genderlabels. Klanten bepalen zelf stijl, intensiteit en budget.</p></article>
-          <article class="card"><p class="tag">Circulair</p><h3>Refill eerst</h3><p>Herbruikbare glazen flacons, een retourbeloning, geconcentreerde navullingen en zo min mogelijk verpakkingsmateriaal.</p></article>
-        </div>
-      </div><aside class="feature-card"><p class="tag">Klantreis</p><h3>Stel jouw geurbrief samen</h3><ol><li>Kies een topnoot, bijvoorbeeld bergamot of roze peper.</li><li>Kies een hartnoot, bijvoorbeeld jasmijn, roos of kardemom.</li><li>Kies een basisnoot, bijvoorbeeld sandelhout, musk of vanille.</li><li>Test, verfijn en neem de geur mee in een navulbare flacon.</li></ol><p><strong>Belangrijk:</strong> het assortiment bevat uitsluitend eigen composities en legaal ingekochte merken. Geen namaak, merklogo’s of kopieën van bekende parfums.</p></aside></div>
-    </div></section>
-
-    <section class="section" id="destep"><div class="container">
-      <p class="eyebrow">02 · Macro-omgeving</p><h2>DESTEP: kansen benutten, risico’s beheersen.</h2><p class="intro">Dit is een werkhypothese voor 2026. Feiten en lokale aannames moeten vóór de start worden gevalideerd met O&amp;S Amsterdam, verhuurder en klantonderzoek.</p>
-      <div class="table-scroll"><table><thead><tr><th>Factor</th><th>Betekenis</th><th>Kans</th><th>Bedreiging / actie</th></tr></thead><tbody>
-        <tr><td>Demografisch</td><td>Zuidoost is multicultureel en groeit door woningbouw en migratie.</td><td>Breed publiek voor persoonlijke, inclusieve geurbeleving.</td><td>Verschillende voorkeuren; test het concept met interviews in de buurt.</td></tr>
-        <tr><td>Economisch</td><td>Inkomens en bestedingsruimte verschillen per huishouden.</td><td>Instapformaten, refill en workshops maken luxe toegankelijk.</td><td>Prijsgevoeligheid; bied een duidelijke prijsladder en bewaak de marge.</td></tr>
-        <tr><td>Sociaal-cultureel</td><td>Identiteit, self-care en cadeaugeven zijn aankoopmotieven.</td><td>Community-events en geurverhalen zonder stereotypering.</td><td>Werk samen met de community en train medewerkers in inclusiviteit.</td></tr>
-        <tr><td>Technologisch</td><td>E-commerce, online afspraken en CRM ondersteunen retail.</td><td>Online geurquiz, click-and-collect en refillherinneringen.</td><td>Online prijsconcurrentie en AVG-risico; onderscheid met fysieke expertise.</td></tr>
-        <tr><td>Ecologisch</td><td>Vraag en regelgeving stimuleren minder afval en transparantie.</td><td>Navulbare flacons, retourstroom en minder verpakkingen.</td><td>Meet retourpercentages en gebruik uitsluitend bewijsbare groene claims.</td></tr>
-        <tr><td>Politiek-juridisch</td><td>Cosmetica vereist productveiligheid, etikettering en traceerbaarheid.</td><td>Vertrouwen door een compliant en transparant assortiment.</td><td>Werk met gecertificeerde leveranciers en controleer alle verplichtingen.</td></tr>
-      </tbody></table></div>
-    </div></section>
-
-    <section class="section" id="bmc"><div class="container"><p class="eyebrow">03 · Meso-omgeving</p><h2>Business Model Canvas</h2><div class="bmc-grid">
-      <article class="card"><h3>Kernpartners</h3><ul><li>EU-conforme geur-/cosmeticaleverancier</li><li>Glas- en refillpartner</li><li>Lokale makers en communityorganisaties</li><li>Verhuurder Amsterdamse Poort</li></ul></article>
-      <article class="card"><h3>Kernactiviteiten</h3><ul><li>Geurconsult en samenstellen</li><li>Veilig afvullen en etiketteren</li><li>Workshops en events</li><li>Voorraad- en retourbeheer</li></ul></article>
-      <article class="card highlight"><h3>Waardepropositie</h3><ul><li>Persoonlijke geur in 20–30 minuten</li><li>Inclusief advies zonder genderlabels</li><li>Navulbare flacons</li><li>Cadeaubonnen en groepsworkshops</li></ul></article>
-      <article class="card"><h3>Klantrelaties</h3><ul><li>1-op-1 geurconsult</li><li>Refillpas</li><li>Communicatie met toestemming</li><li>After-sales</li></ul></article>
-      <article class="card"><h3>Klantsegmenten</h3><ul><li>18–40 jaar uit Zuidoost en bezoekers</li><li>Cadeaukopers en beauty-liefhebbers</li><li>B2B: teams, events, ondernemers</li></ul></article>
-      <article class="card"><h3>Key resources</h3><ul><li>Geuradviseur en vakkennis</li><li>Geurbar en veilige werkplek</li><li>Receptuur- en klantprofielsysteem</li><li>Merk, pand en voorraad</li></ul></article>
-      <article class="card"><h3>Kanalen</h3><ul><li>Winkel</li><li>Instagram en TikTok</li><li>Online afspraak</li><li>Pop-ups en lokale partners</li></ul></article>
-      <article class="card"><h3>Kostenstructuur</h3><ul><li>Huur en personeel</li><li>Grondstoffen, flacons, labels</li><li>Compliance en verzekering</li><li>Marketing en software</li></ul></article>
-      <article class="card"><h3>Inkomstenstromen</h3><ul><li>Custom geur: 30/50 ml</li><li>Refills en aanvullende producten</li><li>Workshops en private events</li><li>Cadeaubonnen en B2B-pakketten</li></ul></article>
-    </div></div></section>
-
-    <section class="section" id="swot"><div class="container"><p class="eyebrow">04 · Strategie</p><h2>SWOT &amp; confrontatiematrix</h2><div class="swot-grid">
-      <article class="card strength"><h3>Sterkten</h3><ul><li>Onderscheid door co-creatie en advies.</li><li>Herhaalomzet via refill.</li><li>Lokale, inclusieve positionering.</li><li>Fysieke beleving is minder online vergelijkbaar.</li></ul></article>
-      <article class="card weakness"><h3>Zwakten</h3><ul><li>Nieuwe merknaam moet vertrouwen opbouwen.</li><li>Vak- en compliancekennis is noodzakelijk.</li><li>Voorraadcomplexiteit en verspilling.</li><li>Custom-productie kost tijd.</li></ul></article>
-      <article class="card opportunity"><h3>Kansen</h3><ul><li>Groei en diversiteit in Zuidoost.</li><li>Personalisatie en self-care.</li><li>Events, cadeaus en B2B.</li><li>Digitale refillherinneringen.</li></ul></article>
-      <article class="card threat"><h3>Bedreigingen</h3><ul><li>Prijsdruk van ketens en webshops.</li><li>Strikte cosmetica- en AVG-verplichtingen.</li><li>Stijgende kosten.</li><li>Greenwashingrisico.</li></ul></article>
-    </div><div class="three-columns strategy"><article class="card"><p class="tag">S-O</p><h3>Groei met beleving</h3><p>Zet advies, co-creatie en lokale events in om de vraag naar personalisatie te benutten.</p></article><article class="card"><p class="tag">W-O</p><h3>Leer vóór voorraad</h3><p>Start met een beperkte, geteste notenbibliotheek en valideer met interviews en proefworkshops.</p></article><article class="card"><p class="tag">S-T / W-T</p><h3>Vertrouwen als bescherming</h3><p>Werk traceerbaar en compliant, train personeel en formuleer alleen bewijsbare duurzaamheidsclaims.</p></article></div></div></section>
-
-    <section class="section" id="pitch"><div class="container"><p class="eyebrow">05 · Presentatiemodus</p><h2>Pitch in 3 minuten</h2><blockquote>“Iedereen verdient een geur die past bij wie die is — niet alleen bij wat er al in het schap staat.”</blockquote><div class="four-columns"><article class="card"><p class="tag">0:00–0:35</p><h3>Probleem</h3><p>Maatwerkgeur is vaak duur, intimiderend of niet lokaal beschikbaar.</p></article><article class="card"><p class="tag">0:35–1:20</p><h3>Oplossing</h3><p>Een toegankelijke geurbar om te ruiken, kiezen, samenstellen en meenemen.</p></article><article class="card"><p class="tag">1:20–2:10</p><h3>Verdienmodel</h3><p>Custom geuren, refills, workshops, cadeaukaarten en B2B-events.</p></article><article class="card"><p class="tag">2:10–3:00</p><h3>Volgende stap</h3><p>Start een pilot: interviews, twee workshops en leverancierschecks.</p></article></div></div></section>
+    <section class="container hero" id="home"><div class="hero-copy"><p class="kicker">Een persoonlijke geur, gemaakt voor jouw aanwezigheid</p><h1>Not a perfume.<br><em>Your</em> signature.</h1><p class="lead">Scent Signature Atelier is een duurzame geurstudio in Amsterdamse Poort. Hier wordt een geur niet gekozen uit een schap, maar zorgvuldig samengesteld rond wie jij bent.</p><div class="links"><a class="cta" href="#concept">Ontdek het atelier</a><a class="plain-link" href="#pitch">Bekijk de pitch</a></div></div><div class="hero-art"><div class="flacon" aria-label="Illustratie van een luxe parfumfles"></div></div></section>
+    <section class="section section-alt" id="concept"><div class="container"><p class="section-label">01 · Bedrijfsidee & waardepropositie</p><h2>Een geur als persoonlijk ritueel.</h2><div class="split" style="margin-top:30px"><p class="intro"><strong>Missie.</strong> Geur toegankelijk maken als persoonlijke expressie, met respect voor verschillende culturen, huidtypen en budgetten. <strong>Visie.</strong> De vertrouwde, lokale geurstudio van Zuidoost worden: ambachtelijk, inclusief en circulair.</p><aside class="note"><p class="section-label">Onze belofte</p><h3>Ontworpen rond jou.</h3><p>Een geurconsult, heldere ingrediënteninformatie, persoonlijke compositie en een navulbare flacon. Geen namaak, geen merklogo’s en geen kopieën van bestaande parfums.</p></aside></div><div class="three"><article class="feature"><span class="number">I.</span><h3>Geurbar</h3><p>Een persoonlijke intake en begeleiding bij top-, hart- en basisnoten.</p></article><article class="feature"><span class="number">II.</span><h3>Voor iedereen</h3><p>Meertalig advies, zonder genderlabels, met ruimte voor uiteenlopende geurtradities.</p></article><article class="feature"><span class="number">III.</span><h3>Refill eerst</h3><p>Herbruikbare glazen flacons, retourbeloning en minder verpakkingsmateriaal.</p></article></div></div></section>
+    <section class="section" id="destep"><div class="container"><p class="section-label">02 · Macro-omgeving</p><h2>DESTEP: context vóór concept.</h2><p class="intro">Een eerste werkhypothese voor 2026. Voor de start moeten lokale feiten, kosten en regelgeving worden gevalideerd.</p><div class="table-wrap"><table><thead><tr><th>Factor</th><th>Betekenis voor het atelier</th><th>Kans</th><th>Actie bij risico</th></tr></thead><tbody><tr><td>Demografisch</td><td>Zuidoost is multicultureel en groeit door woningbouw en migratie.</td><td>Een breed publiek voor een persoonlijke geurbeleving.</td><td>Test voorkeuren met lokale interviews.</td></tr><tr><td>Economisch</td><td>Budgetten verschillen per huishouden.</td><td>Instapformaten, refills en workshops.</td><td>Werk met een heldere prijsladder.</td></tr><tr><td>Sociaal-cultureel</td><td>Identiteit, self-care en cadeaugeven zijn sterke motieven.</td><td>Community-events en inclusieve geurverhalen.</td><td>Vermijd stereotypering; co-creëer lokaal.</td></tr><tr><td>Technologisch</td><td>Online afspraakplanning en CRM ondersteunen de winkel.</td><td>Geurquiz, click-and-collect, refillherinnering.</td><td>Bescherm klantdata volgens AVG.</td></tr><tr><td>Ecologisch</td><td>De vraag naar minder afval en transparantie groeit.</td><td>Glazen refillflacons en retourstroom.</td><td>Meet resultaten; vermijd greenwashing.</td></tr><tr><td>Politiek-juridisch</td><td>Cosmetica vereist veiligheid, etikettering en traceerbaarheid.</td><td>Vertrouwen door transparante compliance.</td><td>Werk alleen met gecertificeerde partners.</td></tr></tbody></table></div></div></section>
+    <section class="section section-alt" id="bmc"><div class="container"><p class="section-label">03 · Meso-omgeving</p><h2>Business Model Canvas</h2><div class="bmc"><article class="card"><h3>Kernpartners</h3><ul><li>EU-conforme cosmeticaleverancier</li><li>Glas- en refillpartner</li><li>Lokale organisaties</li><li>Verhuurder</li></ul></article><article class="card"><h3>Kernactiviteiten</h3><ul><li>Geurconsult</li><li>Afvullen en etiketteren</li><li>Workshops</li><li>Voorraad- en retourbeheer</li></ul></article><article class="card card-focus"><h3>Waardepropositie</h3><ul><li>Persoonlijke geur in 20–30 minuten</li><li>Inclusief advies</li><li>Navulbare flacons</li><li>Workshops en cadeaubonnen</li></ul></article><article class="card"><h3>Klantrelaties</h3><ul><li>1-op-1 consult</li><li>Refillpas</li><li>Contact met toestemming</li><li>After-sales</li></ul></article><article class="card"><h3>Klantsegmenten</h3><ul><li>18–40 jaar en bezoekers</li><li>Cadeaukopers</li><li>Beauty-liefhebbers</li><li>B2B-events</li></ul></article><article class="card"><h3>Resources</h3><ul><li>Geuradviseur</li><li>Geurbar</li><li>Receptuurdata</li><li>Pand en voorraad</li></ul></article><article class="card"><h3>Kanalen</h3><ul><li>Winkel</li><li>Social media</li><li>Online afspraak</li><li>Pop-ups</li></ul></article><article class="card"><h3>Kosten</h3><ul><li>Huur en personeel</li><li>Grondstoffen</li><li>Compliance</li><li>Marketing en software</li></ul></article><article class="card"><h3>Inkomsten</h3><ul><li>Custom geur</li><li>Refills</li><li>Workshops</li><li>Cadeaubonnen en B2B</li></ul></article></div></div></section>
+    <section class="section" id="swot"><div class="container"><p class="section-label">04 · Strategie</p><h2>Een onderscheid dat terugkomt.</h2><div class="swot"><article class="card strength"><h3>Sterkten</h3><ul><li>Co-creatie en persoonlijk advies.</li><li>Herhaalomzet via refill.</li><li>Lokale, inclusieve positionering.</li><li>Beleving die online niet te kopiëren is.</li></ul></article><article class="card weakness"><h3>Zwakten</h3><ul><li>Nieuw merk moet vertrouwen opbouwen.</li><li>Specialistische kennis is noodzakelijk.</li><li>Voorraadcomplexiteit.</li><li>Custom-productie kost tijd.</li></ul></article><article class="card opportunity"><h3>Kansen</h3><ul><li>Groei en diversiteit in Zuidoost.</li><li>Personalisatie en self-care.</li><li>Cadeaus, events en B2B.</li><li>Digitale refillherinneringen.</li></ul></article><article class="card threat"><h3>Bedreigingen</h3><ul><li>Prijsdruk van ketens en webshops.</li><li>Cosmetica- en AVG-regels.</li><li>Stijgende kosten.</li><li>Greenwashingrisico.</li></ul></article></div><div class="strategy"><article class="card"><p class="section-label">S-O</p><h3>Groei met beleving</h3><p>Gebruik consults en events om personalisatie zichtbaar te maken.</p></article><article class="card"><p class="section-label">W-O</p><h3>Leer vóór voorraad</h3><p>Start met een beperkte notenbibliotheek en test in workshops.</p></article><article class="card"><p class="section-label">S-T / W-T</p><h3>Vertrouwen beschermen</h3><p>Werk traceerbaar, compliant en met bewijsbare claims.</p></article></div></div></section>
+    <section class="section section-alt" id="pitch"><div class="container"><p class="section-label">05 · Presentatiemodus</p><h2>Pitch in drie minuten.</h2><blockquote>“Iedereen verdient een geur die past bij wie die is — niet alleen bij wat er al in het schap staat.”</blockquote><div class="pitch"><article><time>0:00–0:35</time><h3>Probleem</h3><p>Maatwerk is vaak duur, intimiderend of niet lokaal beschikbaar.</p></article><article><time>0:35–1:20</time><h3>Oplossing</h3><p>Een laagdrempelige geurbar om te ruiken, kiezen en samenstellen.</p></article><article><time>1:20–2:10</time><h3>Verdienmodel</h3><p>Custom geuren, refills, workshops, cadeaukaarten en B2B-events.</p></article><article><time>2:10–3:00</time><h3>Volgende stap</h3><p>Start een pilot met interviews, workshops en leverancierschecks.</p></article></div></div></section>
   </main>
-
-  <footer><div class="container"><strong>Bronnen en AI-verantwoording</strong><p>DESTEP is een eerste analyse op basis van onder meer O&amp;S Amsterdam, New Metropolis en actuele EU-regels voor cosmetica. Controleer vóór exploitatie alle feiten, lokale voorwaarden, leveranciers en regelgeving. AI is gebruikt voor structuur, tekst en ontwerp; het projectteam blijft verantwoordelijk voor de eindcontrole.</p></div></footer>
+  <footer><div class="container"><strong>Scent Signature Atelier</strong><p>Conceptversie voor een ondernemingsplan. Controleer lokale data, leveranciers, productveiligheid en regelgeving vóór exploitatie. AI is gebruikt voor tekststructuur en ontwerp; het projectteam blijft verantwoordelijk voor de eindcontrole.</p></div></footer>
 </body>
 </html>
