@@ -55,47 +55,100 @@
 <section class="section" id="financieel">
   <div class="container">
     <p class="label no-line">05 · Deelopdracht 1.5</p>
-    <h2>Financieel model:<br>transparant en controleerbaar.</h2>
-    <p class="intro">De beginbalans vertaalt investeringen naar financiering. In Excel moeten invoercellen, brondata, berekeningen en controles duidelijk van elkaar zijn gescheiden.</p>
+    <h2>Financieel model:<br>beginbalans.</h2>
+    <p class="intro">De beginbalans vertaalt de investeringen van Scent Signature naar de financieringsstructuur. De activa en passiva zijn in balans.</p>
+
+    <div class="grid3">
+      <article class="card focus">
+        <p class="label no-line">Totaal activa</p>
+        <h3>€ 44.350,00</h3>
+        <p>Alle investeringen en beschikbare middelen bij de start.</p>
+      </article>
+      <article class="card">
+        <p class="label no-line">Eigen vermogen</p>
+        <h3>€ 22.175,00</h3>
+        <p>50% van de totale financiering wordt ingebracht als eigen vermogen.</p>
+      </article>
+      <article class="card">
+        <p class="label no-line">Vreemd vermogen</p>
+        <h3>€ 22.175,00</h3>
+        <p>De overige 50% bestaat uit een lening en crediteuren.</p>
+      </article>
+    </div>
 
     <div class="tablebox">
       <table>
         <thead>
           <tr>
-            <th>Werkmap</th>
-            <th>Wat erin staat</th>
-            <th>Controle</th>
+            <th>Activa · investeringen</th>
+            <th>Bedrag</th>
+            <th>Passiva · financiering</th>
+            <th>Bedrag</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1. Invoer</td>
-            <td>Bronbedragen en aannames met omschrijving, bron en datum.</td>
-            <td>Geen berekeningen in invoercellen.</td>
+            <td>Inventaris</td>
+            <td>€ 12.500,00</td>
+            <td>Eigen vermogen</td>
+            <td>€ 22.175,00</td>
           </tr>
           <tr>
-            <td>2. Beginbalans</td>
-            <td>Activa tegenover eigen en vreemd vermogen.</td>
-            <td>Totaal activa − totaal passiva = 0.</td>
+            <td>Voorraad</td>
+            <td>€ 12.000,00</td>
+            <td>Lening</td>
+            <td>€ 11.087,50</td>
           </tr>
           <tr>
-            <td>3. Toelichting</td>
-            <td>Classificaties en motivatie van financiering.</td>
-            <td>Borg apart van huur; lening en crediteuren onderbouwd.</td>
+            <td>Bank</td>
+            <td>€ 13.500,00</td>
+            <td>Crediteuren</td>
+            <td>€ 11.087,50</td>
           </tr>
           <tr>
-            <td>4. Controles</td>
-            <td>Foutmeldingen en formulecontroles.</td>
-            <td>Geen handmatige totalen of lege noodzakelijke invoer.</td>
+            <td>Kas</td>
+            <td>€ 350,00</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Huur en borg</td>
+            <td>€ 6.000,00</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Totaal activa</strong></td>
+            <td><strong>€ 44.350,00</strong></td>
+            <td><strong>Totaal passiva</strong></td>
+            <td><strong>€ 44.350,00</strong></td>
           </tr>
         </tbody>
       </table>
     </div>
 
+    <div class="grid3">
+      <article class="card">
+        <span class="number">50%</span>
+        <h3>Eigen vermogen</h3>
+        <p>De ondernemer financiert de helft van de begininvestering zelf.</p>
+      </article>
+      <article class="card">
+        <span class="number">25%</span>
+        <h3>Lening</h3>
+        <p>Een zakelijke lening financiert een kwart van de beginbalans.</p>
+      </article>
+      <article class="card">
+        <span class="number">25%</span>
+        <h3>Crediteuren</h3>
+        <p>Een kwart bestaat uit nog te betalen bedragen aan leveranciers.</p>
+      </article>
+    </div>
+
     <div class="callout">
-      <p class="label">Formuleprincipe</p>
-      <h3>Laat de financieringsbehoefte uit de activa volgen.</h3>
-      <p>Gebruik bijvoorbeeld <strong>=SOM(B5:B10)</strong> voor totaal activa, <strong>=Totaal_activa*Percentage_EV</strong> voor eigen vermogen en een statusformule die alleen “OK” toont wanneer de balanscontrole nul is.</p>
+      <p class="label">Excel-verantwoording</p>
+      <h3>Berekeningen met formules.</h3>
+      <p>De activa worden opgeteld met <strong>=SUM(B4:B8)</strong>. Het eigen vermogen is gekoppeld aan de totale activa met <strong>=B9/2</strong>. De lening en crediteuren zijn daarna via celverwijzingen aan het eigen vermogen gekoppeld. Daardoor blijft de beginbalans automatisch in evenwicht wanneer een investering wordt aangepast.</p>
     </div>
   </div>
 </section>
