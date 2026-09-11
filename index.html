@@ -61,18 +61,18 @@
     <div class="grid3">
       <article class="card focus">
         <p class="label no-line">Totaal activa</p>
-        <h3>€ 44.350,00</h3>
+        <h3>€ 32.850,00</h3>
         <p>Alle investeringen en beschikbare middelen bij de start.</p>
       </article>
       <article class="card">
         <p class="label no-line">Eigen vermogen</p>
-        <h3>€ 22.175,00</h3>
+        <h3>€ 16.425,00</h3>
         <p>50% van de totale financiering wordt ingebracht als eigen vermogen.</p>
       </article>
       <article class="card">
-        <p class="label no-line">Vreemd vermogen</p>
-        <h3>€ 22.175,00</h3>
-        <p>De overige 50% bestaat uit een lening en crediteuren.</p>
+        <p class="label no-line">Lening</p>
+        <h3>€ 16.425,00</h3>
+        <p>De overige 50% wordt gefinancierd met een zakelijke lening.</p>
       </article>
     </div>
 
@@ -91,19 +91,25 @@
             <td>Inventaris</td>
             <td>€ 12.500,00</td>
             <td>Eigen vermogen</td>
-            <td>€ 22.175,00</td>
+            <td>€ 16.425,00</td>
+          </tr>
+          <tr>
+            <td>Huur en borg</td>
+            <td>€ 6.000,00</td>
+            <td>Lening</td>
+            <td>€ 16.425,00</td>
           </tr>
           <tr>
             <td>Voorraad</td>
             <td>€ 12.000,00</td>
-            <td>Lening</td>
-            <td>€ 11.087,50</td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-            <td>Bank</td>
-            <td>€ 13.500,00</td>
-            <td>Crediteuren</td>
-            <td>€ 11.087,50</td>
+            <td>Bank ING</td>
+            <td>€ 2.000,00</td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
             <td>Kas</td>
@@ -112,16 +118,10 @@
             <td></td>
           </tr>
           <tr>
-            <td>Huur en borg</td>
-            <td>€ 6.000,00</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
             <td><strong>Totaal activa</strong></td>
-            <td><strong>€ 44.350,00</strong></td>
+            <td><strong>€ 32.850,00</strong></td>
             <td><strong>Totaal passiva</strong></td>
-            <td><strong>€ 44.350,00</strong></td>
+            <td><strong>€ 32.850,00</strong></td>
           </tr>
         </tbody>
       </table>
@@ -134,21 +134,21 @@
         <p>De ondernemer financiert de helft van de begininvestering zelf.</p>
       </article>
       <article class="card">
-        <span class="number">25%</span>
-        <h3>Lening</h3>
-        <p>Een zakelijke lening financiert een kwart van de beginbalans.</p>
+        <span class="number">50%</span>
+        <h3>Zakelijke lening</h3>
+        <p>De lening financiert de andere helft van de beginbalans.</p>
       </article>
       <article class="card">
-        <span class="number">25%</span>
-        <h3>Crediteuren</h3>
-        <p>Een kwart bestaat uit nog te betalen bedragen aan leveranciers.</p>
+        <span class="number">€ 2.350</span>
+        <h3>Liquide middelen</h3>
+        <p>€ 2.000 op de bank en € 350 kasgeld vormen de beschikbare buffer bij de start.</p>
       </article>
     </div>
 
     <div class="callout">
       <p class="label">Excel-verantwoording</p>
       <h3>Berekeningen met formules.</h3>
-      <p>De activa worden opgeteld met <strong>=SUM(B4:B8)</strong>. Het eigen vermogen is gekoppeld aan de totale activa met <strong>=B9/2</strong>. De lening en crediteuren zijn daarna via celverwijzingen aan het eigen vermogen gekoppeld. Daardoor blijft de beginbalans automatisch in evenwicht wanneer een investering wordt aangepast.</p>
+      <p>De activa worden opgeteld met <strong>=SUM(B5:B12)</strong>. Het eigen vermogen is gekoppeld aan de totale activa met <strong>=B13/2</strong>. De lening is eveneens gekoppeld aan de totale activa met <strong>=B13/2</strong>. Daardoor blijft de beginbalans automatisch in evenwicht wanneer een investering wordt aangepast.</p>
     </div>
   </div>
 </section>
